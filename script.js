@@ -1,3 +1,7 @@
+function randomColor() {
+    return Math.floor(Math.random()*256);
+}
+
 const container = document.querySelector(".container");
 const button = document.createElement("button");
 button.textContent = "Change grid size";
@@ -11,11 +15,12 @@ function createGrid(size = 16)
         const newDiv = document.createElement("div");
         container.appendChild(newDiv);
 
-        newDiv.style.width = `${800/size - 2}px`;
-        newDiv.style.height = `${800/size - 2}px`;
+        newDiv.style.width = `${800/size}px`;
+        newDiv.style.height = `${800/size}px`;
+        newDiv.style.border = "1px solid black";
 
         newDiv.addEventListener("mouseenter", function () {
-            newDiv.classList.add("hovering");
+            newDiv.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
         });
     }
 }

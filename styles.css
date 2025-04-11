@@ -19,9 +19,5 @@ body {
     height: 48px;
     width: 48px;
     border: 1px solid black;
-}
-
-.hovering 
-{
-    background-color: red;
+    box-sizing: border-box;
 }
